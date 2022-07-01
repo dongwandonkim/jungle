@@ -4,7 +4,11 @@
   </header>
 
   <article class="product-detail">
-    <%= image_tag @product.image.url, class: 'main-img' %>
+    <% if @product.image_available? %>
+      <%= image_tag @product.image.url, class: 'main-img' %>
+    <% else %>
+      <div>no image</div>
+    <% end %>
     <div>
       <h1><%= @product.name %></h1>
       <p><%= @product.description %></p>

@@ -8,4 +8,8 @@ class Product < ApplicationRecord
   validates :price, presence: true
   validates :quantity, presence: true
   validates :category, presence: true
+
+  def image_available?
+    image.file.present?
+  end
 end
